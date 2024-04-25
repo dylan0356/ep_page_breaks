@@ -1,62 +1,11 @@
 {
-  "name": "ep__page_breaks",
-  "version": "0.0.1",
+  "name": "ep_page_breaks",
+  "version": "1.0.1",
   "description": "",
-  "author": {
-    "name": "Dylan",
-    "email":  "<dylanb3d@hotmail.com>",
-    "github": "https://github.com/dylan0356"
-  },
-  "contributors": [
-    "",
-  ],
-  "keywords": [
-    "etherpad",
-    "plugin",
-    "ep",
-  ],
-  "license": {
-    "Apache-2.0+"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dylan0356/ep__page_breaks.git",
-  },
-  "bugs": {
-    "url": "https://github.com/dylan0356/ep__page_breaks/issues",
-  },
-  "homepage": {
-    "url": "https://github.com/dylan0356/ep__page_breaks/README.md",
-  },
-  "funding": {
-    "type": "individual",
-    "url": "https://etherpad.org/",
-  },
-  "dependencies": {
-    "MODULE": "0.3.20",
-  },
-  "peerDependencies": {
-    "ep_etherpad_lite":">=1.8.6",
-  },
-  "devDependencies": {
-    "eslint": "^7.18.0",
-    "eslint-config-etherpad": "^1.0.24",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-mocha": "^8.0.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prefer-arrow": "^1.2.3",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-you-dont-need-lodash-underscore": "^6.10.0",
-  },
-    "eslintConfig": {
-    "root": true,
-    "extends": "etherpad/plugin",
-  },
+  "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": ">= 10.13.0",
-  }
+  "author": "",
+  "license": "ISC"
 }
