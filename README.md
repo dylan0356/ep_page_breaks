@@ -1,25 +1,16 @@
-<<<<<<< HEAD
 # ep_page_breaks
 
 ### Page Breaks
 =======
 # ep__page_breaks
 ![Publish Status](https://github.com/dylan0356/ep__page_breaks/workflows/Node.js%20Package/badge.svg) ![Publish Status](https://github.com/dylan0356/ep__page_breaks/workflows/Node.js%20Package/badge.svg)
-![Screenshot](https://user-images.githubusercontent.com/220864/107214131-5c3dd600-6a01-11eb-82d9-b2d67ec8ae93.png)
 
 ## What is ep__page_breaks?
-An Etherpad Plugin to apply the ep__page_breaks functionality in a pad. (describe in minimum 50 Letters what it is)
-Currently supports:
-* ep__page_breaks functionality 1
-* ep__page_breaks functionality 2
-* ep__page_breaks functionality 3
-* ep__page_breaks functionality 4
+An Etherpad Plugin to apply page breaks to the pad.
 
 ## ep__page_breaks Usage
-Experimental.  As a special attribute on Etherpad, some weirdness may be experienced by using ep__page_breaks.
+Experimental. Use at your own risk. Currently creates a page break every 50 lines.
 
-## ep__page_breaks History
-I decided to copy/paste the ep_t3 over ep__page_breaks to create that plugin.
 
 ## ep__page_breaks License
 /**
@@ -40,24 +31,5 @@ I decided to copy/paste the ep_t3 over ep__page_breaks to create that plugin.
   * * @license Apache-2.0+ <http://www.apache.org/licenses/LICENSE-2.0>
   */
 
-## ep__page_breaks Development
-I did the development for free to help support continued learning due to disruptions by the coronavirus.
-
 ## ep__page_breaks Author
 Dylan <dylanb3d@hotmail.com>, https://github.com/dylan0356
-
-## ep__page_breaks Contributors
-
-
-## Help Funding ep__page_breaks
-Place your funding information here.
-
- SEND
- MORE
------
-MONEY
-
-Thanks
-Dylan
-
->>>>>>> master

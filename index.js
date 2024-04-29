@@ -22,5 +22,17 @@ exports.aceAttribsToClasses = function(hook, context) {
       const documentAttributeManager = context.documentAttributeManager;
   
       documentAttributeManager.setAttributeOnLine(line, 'pageBreak', 'true');
+
+      // Insert a line of text for debugging
+      const editorInfo = context.editorInfo;
+      const rep = context.rep;
+      const lineNumber = rep.lines.length();
+      editorInfo.ace_inCallStackIfNecessary('insertPageBreakText', function() {
+        editorInfo.ace_performDocumentReplaceRange(
+          [lineNumber, 0],
+          [lineNumber, 0],
+          "\n--- Page Break ---\n"
+        );
+      });
     }
   };
