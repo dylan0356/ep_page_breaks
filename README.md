@@ -1,18 +1,14 @@
 # ep_page_breaks
-
-### Page Breaks
-=======
-# ep__page_breaks
 ![Publish Status](https://github.com/dylan0356/ep__page_breaks/workflows/Node.js%20Package/badge.svg) ![Publish Status](https://github.com/dylan0356/ep__page_breaks/workflows/Node.js%20Package/badge.svg)
 
-## What is ep__page_breaks?
+### What is ep__page_breaks?
 An Etherpad Plugin to apply page breaks to the pad.
 
-## ep__page_breaks Usage
+### ep__page_breaks Usage
 Experimental. Use at your own risk. Currently creates a page break every 50 lines.
 
 
-## ep__page_breaks License
+### ep__page_breaks License
 /**
   * Copyright 2024 by Dylan <dylanb3d@hotmail.com>
   *
@@ -31,5 +27,5 @@ Experimental. Use at your own risk. Currently creates a page break every 50 line
   * * @license Apache-2.0+ <http://www.apache.org/licenses/LICENSE-2.0>
   */
 
-## ep__page_breaks Author
+### ep__page_breaks Author
 Dylan <dylanb3d@hotmail.com>, https://github.com/dylan0356

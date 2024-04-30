@@ -1,38 +1,35 @@
-exports.aceAttribsToClasses = function(hook, context) {
-    if (context.key === 'pageBreak') {
-      return ['pageBreak'];
-    }
-  };
-  
-  exports.collectContentPre = function(hook, context) {
-    const tname = context.tname;
-    const state = context.state;
-    const lineHasMarker = state.lineMarker === 1;
-  
-    if (tname === 'div' && lineHasMarker) {
-      context.cc.doAttrib(state, 'pageBreak');
-    }
-  };
+var eejs = require('ep_etherpad-lite/node/eejs/');
+var Changeset = require("ep_etherpad-lite/static/js/Changeset");
+exports.eejsBlock_editbarMenuLeft = function (hook_name, args, cb) {
+  args.content = args.content + eejs.require("ep_page_view/templates/editbarButtons.ejs");
+  return cb();
+}
 
-  exports.aceEditEvent = function(hook, context) {
-    const PAGE_BREAK_AFTER_LINES = 50;
-  
-    if (context.callstack.docTextChanged && context.rep.lines.length() % PAGE_BREAK_AFTER_LINES === 0) {
-      const line = context.rep.lines.length() - 1;
-      const documentAttributeManager = context.documentAttributeManager;
-  
-      documentAttributeManager.setAttributeOnLine(line, 'pageBreak', 'true');
+function getInlineStyle(pageBreak) {
+  return "pageBreak: "+pageBreak+";";
+}
 
-      // Insert a line of text for debugging
-      const editorInfo = context.editorInfo;
-      const rep = context.rep;
-      const lineNumber = rep.lines.length();
-      editorInfo.ace_inCallStackIfNecessary('insertPageBreakText', function() {
-        editorInfo.ace_performDocumentReplaceRange(
-          [lineNumber, 0],
-          [lineNumber, 0],
-          "\n--- Page Break ---\n"
-        );
-      });
+// line, apool,attribLine,text
+exports.getLineHTMLForExport = function (hook, context) {
+  var header = _analyzeLine(context.attribLine, context.apool);
+  if (header) {
+    var inlineStyle = getInlineStyle(header);
+    if (context.lineContent[0] === '*') {
+      context.lineContent = context.lineContent.substring(1);
     }
-  };
+    context.lineContent = "<span style='page-break-before: always;page-break-inside: avoid;'>" + context.lineContent + "</span>";
+  }
+  return true;
+}
+
+function _analyzeLine(alineAttrs, apool) {
+  var header = null;
+  if (alineAttrs) {
+    var opIter = Changeset.opIterator(alineAttrs);
+    if (opIter.hasNext()) {
+      var op = opIter.next();
+      header = Changeset.opAttributeValue(op, 'pageBreak', apool);
+    }
+  }
+  return header;
+}
